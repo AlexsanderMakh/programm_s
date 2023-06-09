@@ -1,0 +1,810 @@
+@media screen and (max-width: 1024px) {
+	.menu {
+		display: none;
+	}
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		overflow-x: hidden;
+	}
+	html {
+		overflow-x: hidden;
+		width: 100%;
+		height: auto;
+	}
+
+	body {
+		background: #011d42;
+		width: 100%;
+		overflow-x: hidden; /*для горизонтального */
+	}
+
+	.burger {
+		opacity: 1;
+	}
+	.menu.open {
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+		position: absolute;
+		top: 80px;
+		left: 0px;
+		width: 100%;
+		height: 236px;
+		background-color: #000000;
+	}
+
+	.menu.open a {
+		margin: 10px 0;
+		background-color: #000000;
+	}
+
+	.header_wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.header_wrapper::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		height: 1px;
+		z-index: 9999;
+	}
+	.img_header_wrapper {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-evenly;
+		position: relative;
+		z-index: -1;
+	}
+	.img_header {
+		width: 100%;
+		z-index: -1;
+		position: absolute;
+	}
+
+	.description_text {
+		width: 100%;
+		font-size: 30px;
+	}
+
+	.examples {
+		width: 100%;
+	}
+	.vector_five {
+		display: none;
+		/* нужно отредактировать положение  */
+	}
+	.example_one,
+	.exampe_two,
+	.example_three,
+	.example_four,
+	.example_five {
+		width: 180px;
+	}
+	.examples_value {
+		font-size: 50px;
+	}
+	.examples_text {
+		width: 170px;
+		font-size: 17px;
+	}
+	.examples_img {
+		width: 100%;
+	}
+
+	.examples_img_two {
+		position: absolute;
+		top: -105px;
+		left: 0px;
+	}
+
+	.examples_img_three {
+		position: absolute;
+		top: -85px;
+		left: 0px;
+	}
+
+	.examples_img_four {
+		position: absolute;
+		top: -115px;
+		left: 0px;
+	}
+
+	.examples_img_five {
+		position: absolute;
+		top: -108px;
+		left: 0px;
+	}
+
+	.mobile_app,
+	.app_for_admin,
+	.apps_for_phone,
+	.project_infrastructure {
+		width: 100%;
+	}
+	.title_mobile {
+		font-size: 22px;
+	}
+
+	.mobile_app_name,
+	.app_for_admin_name,
+	.apps_for_phone_name,
+	.project_infrasructure_name {
+		width: 100%;
+	}
+
+	.mobile_app_text {
+		width: 100%;
+		font-size: 15px;
+	}
+
+	.title_mobile {
+		font-size: 24px;
+	}
+
+	.mobile_app_text {
+		width: 100%;
+		font-size: 15px;
+	}
+
+	.finish_project,
+	.img_project {
+		width: 100%;
+	}
+
+	.img_project {
+		width: 300%;
+	}
+
+	.symbol_position {
+		height: 460px;
+	}
+	.project_for_key {
+		width: 100%;
+	}
+
+	.project_for_key_name {
+		width: 768px;
+		font-size: 33px;
+		line-height: 50px;
+	}
+
+	.project_for_key_text {
+		width: 768px;
+		font-size: 20px;
+	}
+
+	.project_for_key_symbol {
+		font-size: 25px;
+	}
+
+	.analytics {
+		left: calc(50% - 360px);
+	}
+
+	.java_developer {
+		left: calc(50% - 130px);
+	}
+	.frontend {
+		left: calc(50% + 175px);
+	}
+
+	.architect {
+		left: calc(50% - 315px);
+	}
+
+	.project_manager {
+		left: calc(50% + 100px);
+	}
+
+	.designer {
+		left: calc(50% - 280px);
+	}
+
+	.developer {
+		left: calc(50% - 20px);
+	}
+
+	.android {
+		left: calc(50% - 335px);
+	}
+
+	.ios {
+		left: calc(50% + 135px);
+	}
+
+	.admin {
+		left: calc(50% - 215px);
+	}
+
+	.container_footer {
+		width: 100%;
+	}
+
+	.our_clients_text {
+		font-size: 40px;
+		line-height: 35px;
+	}
+
+	.clients_label {
+		width: 100%;
+		gap: 28px;
+		padding: 20px;
+	}
+
+	.our_clients_gaz img {
+		width: 100%;
+	}
+
+	.our_clients_msk img {
+		width: 100%;
+	}
+
+	.our_clients_tulsk img {
+		width: 100%;
+	}
+	.our_clients_admin img {
+		width: 100%;
+	}
+
+	.contact_us_footer {
+		width: 100%;
+	}
+
+	.vector_six,
+	.vector_six img {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.menu {
+		display: none;
+	}
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		overflow-x: hidden;
+	}
+	html {
+		overflow-x: hidden;
+		width: 100%;
+		height: auto;
+	}
+
+	body {
+		background: #011d42;
+		width: 100%;
+		overflow-x: hidden; /*для горизонтального */
+	}
+
+	.burger {
+		opacity: 1;
+	}
+
+	.menu.open {
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 60px;
+		height: 236px;
+		background-color: #000000;
+	}
+
+	.menu.open a {
+		margin: 10px 0;
+		background-color: #000000;
+	}
+
+	.header_wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		z-index: 7;
+	}
+
+	.vector_first {
+		left: 550px;
+	}
+
+	.header_wrapper::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		height: 1px;
+		z-index: 9999;
+	}
+
+	.number {
+		font-size: 13px;
+		margin-left: 10px;
+	}
+
+	.label {
+		width: 100px;
+	}
+
+	.jet {
+		font-style: 20px;
+		line-height: 22px;
+	}
+	.fors {
+		font-style: 30px;
+		line-height: 22px;
+	}
+
+	.content {
+		width: 100%;
+		padding-top: 20px;
+	}
+
+	.container {
+		max-width: 768px;
+	}
+
+	.program_name {
+		width: 100%;
+	}
+
+	.program_name_title {
+		font-size: 34px;
+		line-height: 52px;
+		width: 100%;
+	}
+
+	.program_name_text {
+		font-size: 20px;
+		width: 100%;
+	}
+
+	.project_btn,
+	.team_btn,
+	.team {
+		width: 210px;
+		height: 60px;
+		font-size: 16px;
+		z-index: 1;
+	}
+
+	.img_header {
+		position: absolute;
+		width: 100%;
+		height: 530px;
+		z-index: -6;
+		animation: slideInUp 2.5s ease-out forwards;
+	}
+
+	.scroll-wrapper {
+		position: relative;
+		z-index: 5;
+	}
+
+	.description {
+		position: relative;
+		z-index: 1;
+	}
+	.description_text {
+		width: 100%;
+		font-size: 29px;
+	}
+
+	.examples {
+		width: 100%;
+	}
+	.examples_text {
+		width: 130px;
+		height: 57px;
+		font-family: "Lato";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 20px;
+		text-align: center;
+		color: #ffffff;
+	}
+
+	.examples_value {
+		width: 130px;
+		height: 63px;
+		font-family: "Lato";
+		font-style: normal;
+		font-weight: 300;
+		font-size: 52px;
+		line-height: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #ffffff;
+		z-index: 0;
+		position: relative;
+	}
+	.examples_img {
+		width: 100%;
+		/* нужно сделать само изображение меньше */
+	}
+
+	.examples_img_one {
+		top: -30px;
+	}
+
+	.examples_img_one,
+	.examples_img_two,
+	.examples_img_three,
+	.examples_img_four,
+	.examples_img_five {
+		width: 100%;
+	}
+
+	.mobile_app,
+	.app_for_admin,
+	.apps_for_phone,
+	.project_infrastructure {
+		width: 768px;
+	}
+
+	.mobile_app_name,
+	.app_for_admin_name,
+	.apps_for_phone_name,
+	.project_infrasructure_name {
+		width: 100%;
+		font-size: 23px;
+	}
+
+	.line {
+		width: 100%;
+	}
+
+	.title_mobile {
+		font-size: 20px;
+	}
+
+	.mobile_app_text {
+		width: 768px;
+		font-size: 15px;
+	}
+
+	.finish_project,
+	.img_project {
+		margin: 0 auto;
+	}
+
+	.symbol_position {
+		height: 460px;
+	}
+	.project_for_key {
+		width: 768px;
+	}
+
+	.project_for_key_name {
+		width: 768px;
+		font-size: 33px;
+		line-height: 50px;
+	}
+
+	.project_for_key_text {
+		width: 768px;
+		font-size: 20px;
+	}
+
+	.project_for_key_symbol {
+		font-size: 25px;
+	}
+
+	.analytics {
+		left: calc(50% - 360px);
+	}
+
+	.java_developer {
+		left: calc(50% - 130px);
+	}
+	.frontend {
+		left: calc(50% + 175px);
+	}
+
+	.architect {
+		left: calc(50% - 315px);
+	}
+
+	.project_manager {
+		left: calc(50% + 100px);
+	}
+
+	.designer {
+		left: calc(50% - 280px);
+	}
+
+	.developer {
+		left: calc(50% - 20px);
+	}
+
+	.android {
+		left: calc(50% - 335px);
+	}
+
+	.ios {
+		left: calc(50% + 135px);
+	}
+
+	.admin {
+		left: calc(50% - 215px);
+	}
+
+	.container_footer {
+		width: 768px;
+	}
+
+	.our_clients_text {
+		font-size: 36px;
+		line-height: 46px;
+		margin-top: 40px;
+	}
+
+	.clients_label {
+		width: 768px;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.contact_us_footer {
+		width: 100%;
+	}
+
+	.label_footer {
+		width: 100px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.jet {
+		font-size: 19px;
+		margin-bottom: 0px;
+	}
+
+	.fors {
+		font-size: 30px;
+	}
+
+	.contact_mail_send,
+	.contact_mail_phone {
+		font-size: 15px;
+	}
+
+	.map {
+		font-size: 15px;
+		line-height: 20px;
+	}
+
+	.vector_six {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 481px) {
+	.header_wrapper {
+		position: fixed;
+		z-index: 7;
+	}
+
+	.header {
+		width: 100%;
+		display: flex;
+	}
+
+	.burger {
+		display: flex;
+		position: relative;
+		left: -35px;
+	}
+
+	.number {
+		display: none; /* Скрываем номер телефона */
+	}
+
+	.number_wrapper {
+		display: flex;
+	}
+
+	.menu.open {
+		width: 465px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 60px;
+		height: 236px;
+		background-color: #000000;
+	}
+
+	.phone_icon {
+		margin-right: 10px; /* Отступ справа */
+		position: relative;
+		left: -15px; /* Сдвиг влево */
+		top: 17px;
+	}
+
+	.btn {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.content {
+		margin-top: 100px;
+		width: 100%;
+	}
+
+	.container {
+		width: 100%;
+		gap: 85px;
+	}
+
+	.mobile_app,
+	.app_for_admin,
+	.apps_for_phone,
+	.project_infrastructure {
+		width: 100%;
+	}
+
+	.program_name {
+		width: 100%;
+		display: flex;
+	}
+
+	.program_name_title {
+		font-size: 38px;
+	}
+
+	.title_mobile {
+		font-size: 20px;
+	}
+
+	.program_name_text {
+		width: 100%;
+		height: 137px;
+		line-height: 30px;
+		font-size: 28px;
+		font-family: "Lato";
+		font-style: normal;
+		font-weight: 400;
+	}
+
+	.project_btn,
+	.team_btn {
+		width: 360px;
+		z-index: 1;
+		font-size: 22px;
+	}
+
+	.examples {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.finish_project {
+		height: 100%;
+		width: 100%;
+	}
+
+	.project_for_key {
+		padding-top: 150px;
+	}
+
+	.project_for_key,
+	.project_for_key_name,
+	.project_for_key_text {
+		width: 100%;
+	}
+
+	.img_project {
+		width: 300%;
+	}
+	.project_for_key_name {
+		font-size: 21px;
+		line-height: 40px;
+		font-family: "Lato";
+		font-style: normal;
+		font-weight: 300;
+	}
+	.analytics {
+		left: calc(50% - 190px);
+	}
+
+	.java_developer {
+		left: calc(50% - 35px);
+	}
+	.frontend {
+		left: calc(50% + 45px);
+		top: 85px;
+	}
+
+	.architect {
+		left: calc(50% - 197px);
+	}
+
+	.project_manager {
+		left: calc(50% + -58px);
+	}
+
+	.designer {
+		left: calc(50% - 191px);
+	}
+
+	.developer {
+		left: calc(50% - 20px);
+	}
+
+	.android {
+		left: calc(50% - 200px);
+		top: 305px;
+	}
+
+	.ios {
+		left: calc(50% + 10px);
+		top: 339px;
+	}
+
+	.admin {
+		left: calc(50% - 200px);
+		top: 380px;
+	}
+
+	.contact_us,
+	.contact_us_footer {
+		width: 100%;
+	}
+
+	.contact_mail_send {
+		font-size: 14px;
+	}
+	.contact_mail_phone {
+		font-size: 13px;
+	}
+
+	.mobile_app_text {
+		width: 100%;
+	}
+
+	.map {
+		width: 100%;
+		font-size: 14px;
+		height: 44px;
+	}
+
+	.team {
+		width: 314px;
+		height: 72px;
+		font-size: 24px;
+	}
+	.popup-form-container {
+		height: auto;
+	}
+	.close-button {
+		top: 100px;
+	}
+	.form-title {
+		font-size: 28px;
+		line-height: 0px;
+		margin-top: 100px;
+	}
+	.form-subtitle {
+		font-size: 20px;
+		line-height: 20px;
+	}
+}

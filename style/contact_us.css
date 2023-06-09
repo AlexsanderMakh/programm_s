@@ -86,17 +86,15 @@ body {
 	width: 100%;
 	overflow-x: hidden; /*для горизонтального*/
 }
-@media (max-width: 768px) {
-	.header {
-		width: 70%;
-	}
-}
+
 .header_wrapper {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* border: 2px solid red; */
+	z-index: 0;
+	background: linear-gradient(180deg, #000000 0%, rgba(1, 29, 66, 0) 100%);
+	position: relative; /* Добавлено позиционирование */
 }
 
 .header {
@@ -105,6 +103,7 @@ body {
 	justify-content: space-between;
 	align-items: flex-start;
 	padding: 10px;
+	align-items: baseline;
 }
 
 .label {
@@ -112,7 +111,7 @@ body {
 	height: 81px;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: flex-end;
 }
 
 .fors {
@@ -173,10 +172,36 @@ body {
 	color: #ffffff;
 	margin-left: 19px;
 }
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
+.burger {
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	opacity: 0;
+}
+
+.burger-line {
+	width: 25px;
+	height: 3px;
+	background-color: #ffffff;
+	margin-bottom: 5px;
+}
+
+.menu a {
+	margin: 0 10px;
+	text-decoration: none;
+	color: #ffffff;
+}
 
 .container {
 	background-image: url(/img/send.png);
+	position: relative;
+	z-index: -6;
 }
 
 .animation {
@@ -187,6 +212,7 @@ body {
 	position: absolute;
 	top: -211px;
 	left: -516px;
+	z-index: -5;
 }
 
 .container {
@@ -221,6 +247,16 @@ body {
 	flex-direction: row;
 }
 
+.send_for_us {
+	width: 700px;
+	display: flex;
+	align-items: flex-start;
+}
+.contact_form_send {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
 .send_for_us_title {
 	/* border: 4px solid rgb(166, 255, 0); */
 	text-align: start;
@@ -238,7 +274,7 @@ body {
 .form_wrapper {
 	width: 360px;
 	height: 579px;
-	padding: 25px;
+	padding: 10px;
 }
 
 .form {
@@ -267,7 +303,8 @@ body {
 	border: 1.5px solid #fff;
 }
 
-.form textarea, .form input {
+.form textarea,
+.form input {
 	color: #fff;
 }
 
@@ -277,7 +314,7 @@ body {
 	margin-bottom: 15px;
 }
 
-.form_button {
+.form_button_switch {
 	width: 170px;
 	height: 41px;
 	margin: 5px;
@@ -292,6 +329,21 @@ body {
 
 .form .additional_fields {
 	display: none;
+}
+
+.specialty-select {
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+}
+
+.specialty-select:focus {
+	background-color: white;
+	color: black;
+}
+
+.specialty-select:hover {
+	background-color: white;
+	color: black;
 }
 
 .form .additional_fields textarea {
@@ -356,6 +408,14 @@ footer {
 	justify-content: center;
 	align-items: center;
 	background-color: black;
+}
+
+.line_footer {
+	width: 1160px;
+	height: 1px;
+	background: white;
+	margin-top: 40px;
+	opacity: 0.3;
 }
 
 .contact_us {

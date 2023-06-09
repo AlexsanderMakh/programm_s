@@ -1,0 +1,548 @@
+@media screen and (max-width: 1024px) {
+	.menu {
+		display: none;
+	}
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+	}
+	html {
+		overflow-x: hidden;
+		width: 100%;
+		height: auto;
+		overflow-x: hidden;
+	}
+
+	body {
+		background: #011d42;
+		width: 100%;
+		overflow-x: hidden; /*для горизонтального */
+	}
+
+	.header {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		height: 100%;
+	}
+
+	.header_img {
+		width: 100%;
+	}
+
+	.burger {
+		opacity: 1;
+		left: -35px;
+		position: relative;
+		display: flex;
+	}
+	.menu.open {
+		display: flex;
+		position: fixed;
+		flex-direction: column;
+		padding: 20px;
+		position: absolute;
+		top: 150px;
+		left: -16px;
+		width: 100%;
+		/* background-color: #000000; */
+	}
+
+	.menu.open a {
+		margin: 10px 0;
+		/* background-color: #000000; */
+	}
+
+	.header_wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.header_wrapper::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		height: 1px;
+		z-index: 9999;
+	}
+	.phone_icon {
+		margin-right: 10px; /* Отступ справа */
+		position: relative;
+		left: -15px; /* Сдвиг влево */
+		top: 17px;
+	}
+	/* .number {
+		display: none;
+	} */
+	.animation_first {
+		position: absolute;
+		top: -200px;
+		right: 0px;
+		animation: slideInUp 2.5s ease-out forwards;
+	}
+	.animation_two {
+		position: absolute;
+		top: 160px;
+		left: 150px;
+		animation: slideInUp 2.5s ease-out forwards;
+	}
+	.talant_developer_title {
+		line-height: 55px;
+		width: 800px;
+		font-size: 36px;
+	}
+
+	.examples_job,
+	.first_column,
+	.second_column {
+		width: 100%;
+	}
+	.various_specialties_title,
+	.fast_growth_title,
+	.profitable_terms_title,
+	.in_office_title,
+	.money_title,
+	.offece_city_title,
+	.interesting_project_title,
+	.professional_development_title {
+		font-size: 16px;
+	}
+	.various_specialties_example,
+	.fast_growth_text,
+	.in_office_text,
+	.money_text,
+	.profitable_terms_text,
+	.offece_city_text,
+	.interesting_project_text,
+	.professional_development_text {
+		font-size: 15px;
+	}
+	.content,
+	.open_vacantion {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.talant_developer {
+		width: 100%;
+	}
+
+	.examples_job,
+	.first_column {
+		width: 100%;
+		display: flex;
+	}
+	.form-input,
+	.file-label,
+	.submit-team {
+		width: 300px;
+	}
+	.send_summary_content {
+		width: 50%;
+	}
+	.send_summary_title {
+		font-size: 35px;
+		width: 80%;
+	}
+	.send_summary_text {
+		font-size: 19px;
+	}
+
+	.open_vacantion_examples {
+		display: flex;
+		flex-direction: row;
+		gap: 15px;
+	}
+	.animation_four {
+		position: relative;
+		top: -400px;
+	}
+	.send_summary_form {
+		position: relative;
+		z-index: 2;
+	}
+	.contact_us {
+		width: 100%;
+	}
+	.contact_us_footer {
+		width: 1024px;
+	}
+	.jet {
+		font-size: 21px;
+	}
+	.fors {
+		font-size: 30px;
+		line-height: 20px;
+	}
+	.contact_mail {
+		align-content: center;
+	}
+	.contact_mail a {
+		font-size: 15px;
+	}
+	.map {
+		align-items: center;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1766px) {
+	.send_summary_img,
+	.header_img {
+		width: 1766px;
+	}
+}
+@media screen and (max-width: 1471px) {
+	.send_summary_img,
+	.header_img {
+		width: 1471px;
+	}
+}
+@media screen and (max-width: 1366px) {
+	.send_summary_img,
+	.header_img {
+		width: 100%;
+	}
+}
+@media (max-width: 1200px) {
+	.examples_job > div {
+		width: 80%;
+	}
+}
+
+@media (max-width: 600px) {
+	.examples_job > div {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.menu {
+		display: none;
+	}
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		overflow-x: hidden;
+	}
+	html {
+		overflow-x: hidden;
+		width: 100%;
+		height: auto;
+	}
+
+	body {
+		background: #011d42;
+		width: 100%;
+		overflow-x: hidden; /*для горизонтального */
+	}
+
+	.burger {
+		opacity: 1;
+		display: flex;
+	}
+
+	.menu.open {
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+		position: absolute;
+		width: 100%;
+		height: auto;
+		background-color: #000000;
+		top: 70px;
+	}
+
+	.menu.open a {
+		margin: 10px 0;
+		background-color: #000000;
+	}
+
+	.header_wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.header_wrapper::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		height: 1px;
+		z-index: 9999;
+	}
+
+	.header_img {
+		top: -105px;
+	}
+
+	.number {
+		font-size: 13px;
+		margin-left: 10px;
+	}
+
+	.label {
+		width: 100px;
+	}
+
+	.jet {
+		font-style: 20px;
+		line-height: 22px;
+	}
+	.fors {
+		font-style: 30px;
+		line-height: 22px;
+	}
+	.start_title {
+		font-size: 40px;
+	}
+	.start_header_text {
+		width: 650px;
+		font-size: 21px;
+	}
+	.talant_developer_title {
+		width: 600px;
+		line-height: 37px;
+	}
+	.examples_job > div {
+		width: 100%;
+		height: auto;
+		display: flex;
+		align-items: flex-start;
+	}
+	.open_vacantion_examples {
+		justify-content: center;
+	}
+	.various_specialties_title,
+	.various_specialties_title,
+	.fast_growth_title,
+	.profitable_terms_title,
+	.in_office_title,
+	.money_title,
+	.offece_city_title,
+	.interesting_project_title,
+	.professional_development_title {
+		font-size: 14px;
+		line-height: 16px;
+	}
+	.profitable_terms_text,
+	.various_specialties_example,
+	.fast_growth_text,
+	.in_office_text,
+	.money_text,
+	.profitable_terms_text,
+	.offece_city_text,
+	.interesting_project_text,
+	.professional_development_text {
+		font-size: 13px;
+	}
+
+	.contact_us_footer {
+		width: 100%;
+		height: 120px;
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+	}
+	.map {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 620px) {
+}
+
+@media screen and (max-width: 481px) {
+	.header_wrapper {
+		position: fixed;
+		z-index: 7;
+	}
+
+	.header {
+		width: 100%;
+		display: flex;
+		background: linear-gradient(180deg, #000000 0%, rgba(1, 29, 66, 0) 100%);
+	}
+
+	.burger {
+		display: flex;
+	}
+
+	.animation_first {
+		right: -170px;
+	}
+	.animation_two {
+		left: -70px;
+	}
+
+	.menu.open {
+		left: 0px;
+	}
+
+	.number {
+		display: none; /* Скрываем номер телефона */
+	}
+
+	.number_wrapper {
+		display: flex;
+	}
+
+	.phone_icon {
+		margin-right: 10px; /* Отступ справа */
+		position: relative;
+		left: -15px; /* Сдвиг влево */
+		top: 17px;
+	}
+
+	.start_header_title,
+	.start_header_text {
+		width: 480px;
+	}
+
+	.start_header,
+	.start_header_title,
+	.start_title {
+		width: 100%;
+		height: auto;
+		margin-top: 65px;
+	}
+
+	.start_header_text {
+		height: auto;
+		padding: 20px;
+	}
+
+	.start_header_button {
+		display: flex;
+		flex-direction: column;
+	}
+	.talant_developer_title {
+		font-size: 30px;
+	}
+	.examples_job {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.various_exaples,
+	.fast_growth,
+	.in_office,
+	.money,
+	.profitable_terms,
+	.offece_city,
+	.interesting_project,
+	.professional_development {
+		padding: 10px;
+		border: 2px solid #fff;
+		border-radius: 10%;
+	}
+
+	.examples_job > div {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 30px;
+	}
+
+	.various_exaples_img {
+		justify-content: start;
+	}
+
+	.profitable_terms_text,
+	.various_specialties_example,
+	.fast_growth_text,
+	.in_office_text,
+	.money_text,
+	.profitable_terms_text,
+	.offece_city_text,
+	.interesting_project_text,
+	.professional_development_text {
+		font-size: 17px;
+	}
+
+	.various_specialties_title,
+	.various_specialties_title,
+	.fast_growth_title,
+	.profitable_terms_title,
+	.in_office_title,
+	.money_title,
+	.offece_city_title,
+	.interesting_project_title,
+	.professional_development_title {
+		font-size: 20px;
+	}
+
+	.send_summary {
+		display: flex;
+		flex-direction: column;
+		height: auto;
+	}
+
+	.send_summary_content {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		height: auto;
+		padding: 25px;
+	}
+
+	.work_for_you {
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.send_summary_text {
+		font-size: 27px;
+	}
+
+	.send_summary_title {
+		width: 100%;
+	}
+
+	.form-title {
+		font-size: 28px;
+	}
+	.form-subtitle {
+		width: 100%;
+		font-size: 16px;
+	}
+
+	.resume-form {
+		align-items: center;
+	}
+	#resume {
+		display: none;
+	}
+
+	.submit-button {
+		margin-top: 17px;
+		width: 300px;
+	}
+	.close-button {
+		bottom: 255px;
+	}
+
+	.map {
+		line-height: 20px;
+		font-size: 12px;
+	}
+	.send_summary_img {
+		width: 1500px;
+		height: 800px;
+		top: -400px;
+	}
+}
