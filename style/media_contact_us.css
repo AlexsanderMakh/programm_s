@@ -32,14 +32,14 @@
 		padding: 20px;
 		position: absolute;
 		z-index: 1;
-		width: 100%;
+		width: 1200px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		top: 60px;
 		height: 236px;
 		background-color: #000000;
-		left: 0px;
+		left: -536px;
 	}
 
 	.menu.open a {
@@ -69,12 +69,13 @@
 	}
 
 	.number {
-		font-size: 13px;
+		font-size: 16px;
 		margin-left: 10px;
 	}
 
 	.label {
 		width: 100px;
+		justify-content: center;
 	}
 
 	.jet {
@@ -87,11 +88,13 @@
 	}
 
 	.navbar {
-		margin-top: 15px;
 		position: relative;
-		left: -20px;
+		left: 5px;
 	}
-
+	.burger {
+		position: relative;
+		right: -42px;
+	}
 	.form_wrapper h2 {
 		font-size: 30px;
 	}
@@ -102,6 +105,10 @@
 
 	.send_for_us {
 		width: 370px;
+	}
+
+	.contact_form_send {
+		justify-content: center;
 	}
 
 	.location_first {
@@ -127,7 +134,53 @@
 		height: auto;
 	}
 }
+@media screen and (max-width: 800px) {
+	.location_map {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.send_for_us {
+		width: 100%;
+	}
+	.form_wrapper {
+		width: 360px;
+		height: 579px;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	.contact_us,
+	.contact_us_footer {
+		width: 100%;
+	}
+	.contact_us_footer {
+		padding: 7px;
+	}
 
+	.lable_container_mail {
+		width: 150px;
+	}
+	.contact_mail {
+		align-items: start;
+	}
+
+	.form-title {
+		font-size: 28px;
+		line-height: 0px;
+		margin-top: 100px;
+	}
+	.form-subtitle {
+		font-size: 20px;
+		line-height: 20px;
+	}
+	.contact_mail_send {
+		width: 179px;
+	}
+}
 @media screen and (max-width: 768px) {
 	.location_map {
 		display: flex;
@@ -138,6 +191,13 @@
 	.location_first,
 	.location_two {
 		width: 330px;
+	}
+	.lable_container_mail {
+		display: flex;
+		flex-direction: column;
+	}
+	.contact_mail {
+		width: 100%;
 	}
 }
 
@@ -157,7 +217,12 @@
 		justify-content: center;
 		align-items: center;
 	}
-
+	.burger {
+		right: 20px;
+	}
+	.menu.open {
+		left: -603px;
+	}
 	.location_map {
 		margin-top: 80px;
 	}
@@ -188,7 +253,7 @@
 	}
 
 	footer {
-		height: 160px;
+		height: auto;
 	}
 
 	.contact_us_footer {
@@ -196,19 +261,33 @@
 		flex-direction: column;
 	}
 
+	.lable_container_mail {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
 	.phone_icon {
 		margin-right: 10px; /* Отступ справа */
 		position: relative;
-		left: -15px; /* Сдвиг влево */
-		top: 17px;
+
+	}
+
+	.contact_mail {
+		width: 179px;
 	}
 	.label_footer {
-		display: none;
 	}
 	.map {
 		font-size: 15px;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+	}
+	.location {
+		width: 100%;
+		height: auto;
+		align-items: center;
 	}
 }

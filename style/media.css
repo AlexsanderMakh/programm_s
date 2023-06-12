@@ -20,6 +20,8 @@
 		background: #011d42;
 		width: 100%;
 		overflow-x: hidden; /*для горизонтального */
+		position: relative;
+		z-index: -6;
 	}
 
 	.burger {
@@ -30,11 +32,16 @@
 		flex-direction: column;
 		padding: 20px;
 		position: absolute;
-		top: 80px;
-		left: 0px;
-		width: 100%;
-		height: 236px;
+		top: 76px;
+		width: 1000px;
+		left: -35px;
+		height: 270px;
 		background-color: #000000;
+		z-index: 2;
+	}
+	.close-button,
+	.close-form {
+		top: 60px;
 	}
 
 	.menu.open a {
@@ -62,7 +69,7 @@
 		align-items: flex-start;
 		justify-content: space-evenly;
 		position: relative;
-		z-index: -1;
+		z-index: -2;
 	}
 	.img_header {
 		width: 100%;
@@ -70,6 +77,15 @@
 		position: absolute;
 	}
 
+	.container,
+	.program_name_title,
+	.program_name_text {
+		width: 100%;
+	}
+	.program_name_title,
+	.program_name_text {
+		padding: 15px;
+	}
 	.description_text {
 		width: 100%;
 		font-size: 30px;
@@ -79,8 +95,8 @@
 		width: 100%;
 	}
 	.vector_five {
-		display: none;
-		/* нужно отредактировать положение  */
+		top: 156px;
+		left: 25px;
 	}
 	.example_one,
 	.exampe_two,
@@ -139,6 +155,7 @@
 	.apps_for_phone_name,
 	.project_infrasructure_name {
 		width: 100%;
+		padding: 15px;
 	}
 
 	.mobile_app_text {
@@ -169,6 +186,7 @@
 	}
 	.project_for_key {
 		width: 100%;
+		height: 880px;
 	}
 
 	.project_for_key_name {
@@ -263,6 +281,116 @@
 	.vector_six img {
 		width: 100%;
 	}
+	.team {
+		width: 314px;
+		height: 72px;
+		font-size: 24px;
+		top: 40px;
+	}
+	.designer {
+		left: calc(50% - 20px);
+	}
+	.tester {
+		left: calc(50% - 283px);
+	}
+	.developer {
+		left: calc(50% - 185px);
+	}
+	.admin {
+		left: calc(50% - -35px);
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.container {
+		width: 100%;
+		padding: 10px;
+	}
+	.content {
+		z-index: -1;
+	}
+
+	.navbar {
+		position: relative;
+		right: -12px;
+	}
+
+	.menu.open {
+		left: -475px;
+	}
+
+	.program_name_text,
+	.program_name_title,
+	.program_name {
+		width: 100%;
+	}
+	.examples {
+		width: 100%;
+		height: 1170px;
+		display: flex;
+		flex-direction: column;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.finish_project {
+		padding: 20px;
+	}
+	.vector_first {
+		left: 658px;
+	}
+	.vector_two {
+		left: 659px;
+	}
+	.vector_four {
+		left: 550px;
+		top: -340.42px;
+	}
+	.finish_project_name_text {
+		margin-top: 35px;
+		font-size: 17px;
+	}
+	.finish_project_name_text br {
+		display: none;
+	}
+	.symbol_position {
+		height: 520px;
+	}
+	.analytics {
+		left: calc(50% - 310px);
+	}
+	.tester {
+		top: 181px;
+		left: calc(50% - 269px);
+	}
+	.android {
+		left: calc(50% - 290px);
+	}
+	.designer {
+		left: calc(50% - 260px);
+		top: 250px;
+	}
+	.developer {
+		left: calc(50% - 80px);
+		top: 255px;
+	}
+	.admin {
+		left: calc(50% - 25px);
+	}
+	.team {
+		width: 314px;
+		height: 72px;
+		font-size: 24px;
+		top: -15px;
+	}
+	.contact_mail {
+		align-items: flex-start;
+	}
+	.contact_us_footer {
+		padding: 20px;
+	}
+	.label_footer {
+		height: 60px;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -299,11 +427,10 @@
 		padding: 20px;
 		position: absolute;
 		z-index: 1;
-		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		top: 60px;
+		top: 40px;
 		height: 236px;
 		background-color: #000000;
 	}
@@ -457,7 +584,7 @@
 	.app_for_admin,
 	.apps_for_phone,
 	.project_infrastructure {
-		width: 768px;
+		width: 100%;
 	}
 
 	.mobile_app_name,
@@ -490,18 +617,23 @@
 		height: 460px;
 	}
 	.project_for_key {
-		width: 768px;
+		width: 100%;
 	}
 
 	.project_for_key_name {
-		width: 768px;
+		width: 100%;
 		font-size: 33px;
 		line-height: 50px;
 	}
 
+	.description_text_profile {
+		padding: 6px;
+	}
+
 	.project_for_key_text {
-		width: 768px;
-		font-size: 20px;
+		width: 100%;
+		font-size: 19px;
+		padding: 10px;
 	}
 
 	.project_for_key_symbol {
@@ -509,26 +641,26 @@
 	}
 
 	.analytics {
-		left: calc(50% - 360px);
+		left: calc(50% - 298px);
 	}
 
 	.java_developer {
-		left: calc(50% - 130px);
+		left: calc(50% - 110px);
 	}
 	.frontend {
-		left: calc(50% + 175px);
+		left: calc(50% + 116px);
 	}
 
 	.architect {
-		left: calc(50% - 315px);
+		left: calc(50% - 280px);
 	}
 
 	.project_manager {
-		left: calc(50% + 100px);
+		left: calc(50% + 1px);
 	}
 
 	.designer {
-		left: calc(50% - 280px);
+		left: calc(50% - 227px);
 	}
 
 	.developer {
@@ -536,11 +668,11 @@
 	}
 
 	.android {
-		left: calc(50% - 335px);
+		left: calc(50% - 280px);
 	}
 
 	.ios {
-		left: calc(50% + 135px);
+		left: calc(50% + 64px);
 	}
 
 	.admin {
@@ -567,6 +699,10 @@
 		width: 100%;
 	}
 
+	.team {
+		top: 30px;
+	}
+
 	.label_footer {
 		width: 100px;
 		align-items: center;
@@ -587,13 +723,97 @@
 		font-size: 15px;
 	}
 
-	.map {
+	.location {
 		font-size: 15px;
 		line-height: 20px;
 	}
 
+	.lable_container_mail {
+		flex-direction: column;
+		width: 210px;
+	}
+
 	.vector_six {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 569px) {
+	.project_for_key_name {
+		padding: 10px;
+		font-size: 28px;
+	}
+	.analytics {
+		left: calc(50% - 234px);
+		top: -23px;
+	}
+
+	.java_developer {
+		left: calc(50% - 110px);
+		top: 10px;
+	}
+	.frontend {
+		left: calc(50% + 60px);
+	}
+
+	.architect {
+		left: calc(50% - 240px);
+		top: 60px;
+	}
+	.developer_javascript {
+		top: 110px;
+		left: calc(50% - 70px);
+	}
+
+	.project_manager {
+		left: calc(50% + -24px);
+		top: 155px;
+	}
+
+	.designer {
+		left: calc(50% - 197px);
+		top: 200px;
+	}
+
+	.tester {
+		top: 146px;
+		left: calc(50% - 225px);
+	}
+
+	.developer {
+		left: calc(50% - -27px);
+		top: 219px;
+	}
+
+	.android {
+		left: calc(50% - 225px);
+		top: 265px;
+	}
+
+	.ios {
+		left: calc(50% + 40px);
+	}
+
+	.admin {
+		left: calc(50% - 215px);
+		top: 351px;
+	}
+
+	.team {
+		top: -38px;
+	}
+	.lable_container_mail {
+		width: 200px;
+	}
+	.mobile_app_text {
+		width: 100%;
+	}
+	.finish_project {
+		height: auto;
+	}
+	.lable_container_mail {
+		width: 210px;
+		flex-direction: column;
 	}
 }
 
@@ -611,7 +831,6 @@
 	.burger {
 		display: flex;
 		position: relative;
-		left: -35px;
 	}
 
 	.number {
@@ -623,25 +842,33 @@
 	}
 
 	.menu.open {
-		width: 465px;
+		width: 485px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		top: 60px;
+		top: 22px;
+		left: -230px;
 		height: 236px;
 		background-color: #000000;
 	}
+	.navbar {
+		position: relative;
+		left: -40px;
+	}
 
 	.phone_icon {
-		margin-right: 10px; /* Отступ справа */
 		position: relative;
 		left: -15px; /* Сдвиг влево */
-		top: 17px;
 	}
 
 	.btn {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.btn button {
+		margin-right: 0;
+		width: 300px;
 	}
 
 	.content {
@@ -666,8 +893,22 @@
 		display: flex;
 	}
 
+	.vector_first {
+		left: 250px;
+	}
+	.vector_two {
+		left: 265px;
+	}
+	.vector_three {
+		top: -130px;
+	}
+	.vector_four {
+		left: 250px;
+	}
+
 	.program_name_title {
 		font-size: 38px;
+		height: auto;
 	}
 
 	.title_mobile {
@@ -676,12 +917,23 @@
 
 	.program_name_text {
 		width: 100%;
-		height: 137px;
+		height: auto;
 		line-height: 30px;
 		font-size: 28px;
 		font-family: "Lato";
 		font-style: normal;
 		font-weight: 400;
+		padding: 12px;
+	}
+
+	.description_text_profile {
+		padding: 12px;
+	}
+
+	.examples {
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-top: 20px;
 	}
 
 	.project_btn,
@@ -689,6 +941,11 @@
 		width: 360px;
 		z-index: 1;
 		font-size: 22px;
+	}
+
+	.mobile_app {
+		padding: 10px;
+		font-size: 18px;
 	}
 
 	.examples {
@@ -704,6 +961,7 @@
 
 	.project_for_key {
 		padding-top: 150px;
+		padding: 18px;
 	}
 
 	.project_for_key,
@@ -714,28 +972,46 @@
 
 	.img_project {
 		width: 300%;
+		height: 1255px;
 	}
+
+	.project_img_key {
+		height: 1255px;
+	}
+
 	.project_for_key_name {
-		font-size: 21px;
+		font-size: 26px;
 		line-height: 40px;
 		font-family: "Lato";
 		font-style: normal;
 		font-weight: 300;
 	}
+
+	.project_for_key_text {
+		font-size: 24px;
+	}
 	.analytics {
 		left: calc(50% - 190px);
+		top: 0;
 	}
 
 	.java_developer {
 		left: calc(50% - 35px);
+		top: -8px;
 	}
 	.frontend {
-		left: calc(50% + 45px);
-		top: 85px;
+		left: calc(50% + 35px);
+		top: 48px;
 	}
 
 	.architect {
 		left: calc(50% - 197px);
+		top: 71px;
+	}
+
+	.developer_javascript {
+		top: 120px;
+		left: calc(50% - 73px);
 	}
 
 	.project_manager {
@@ -744,15 +1020,22 @@
 
 	.designer {
 		left: calc(50% - 191px);
+		top: 150px;
+	}
+
+	.tester {
+		left: calc(50% - 195px);
+		top: 213px;
 	}
 
 	.developer {
-		left: calc(50% - 20px);
+		left: calc(50% - 10px);
+		top: 245px;
 	}
 
 	.android {
 		left: calc(50% - 200px);
-		top: 305px;
+		top: 290px;
 	}
 
 	.ios {
@@ -781,7 +1064,7 @@
 		width: 100%;
 	}
 
-	.map {
+	.location {
 		width: 100%;
 		font-size: 14px;
 		height: 44px;
@@ -791,13 +1074,38 @@
 		width: 314px;
 		height: 72px;
 		font-size: 24px;
+		top: -15px;
 	}
-	.popup-form-container {
+	.container_footer {
+		margin-bottom: 0;
+	}
+	.our_clients_gaz,
+	.our_clients_msk,
+	.our_clients_tulsk,
+	.our_clients_admin {
+		margin-top: 15px;
+	}
+	.popup-form-container,
+	.popur-form-container-project {
 		height: auto;
 	}
-	.close-button {
+	.close-button,
+	.close-form {
 		top: 100px;
 	}
+
+	.contact_us_footer {
+		height: 135px;
+		padding: 7px;
+	}
+
+	.lable_container_mail {
+		width: 150px;
+	}
+	.contact_mail {
+		align-items: start;
+	}
+
 	.form-title {
 		font-size: 28px;
 		line-height: 0px;

@@ -103,7 +103,7 @@ body {
 	justify-content: space-between;
 	align-items: flex-start;
 	padding: 10px;
-	align-items: baseline;
+	align-items: center;
 }
 
 .label {
@@ -444,13 +444,18 @@ footer {
 	justify-content: start;
 	align-items: start;
 	text-align: left;
+	padding: 10px;
 }
-
+.lable_container_mail {
+	display: flex;
+	align-items: flex-end;
+}
 .contact_mail {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
+	flex-wrap: nowrap;
 
 	width: 362px;
 	font-family: "Lato";
@@ -484,7 +489,7 @@ footer {
 	color: #ffffff;
 }
 
-.map {
+.location {
 	width: 560px;
 	display: flex;
 	flex-direction: column;

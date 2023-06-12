@@ -35,9 +35,10 @@
 
 	.burger {
 		opacity: 1;
-		left: -35px;
+		left: 35px;
 		position: relative;
 		display: flex;
+		top: -15px;
 	}
 	.menu.open {
 		display: flex;
@@ -45,10 +46,12 @@
 		flex-direction: column;
 		padding: 20px;
 		position: absolute;
-		top: 150px;
-		left: -16px;
-		width: 100%;
-		/* background-color: #000000; */
+		top: 70px;
+		left: -20px;
+		width: 970px;
+		height: 300px;
+		background-color: #000000;
+		z-index: 1;
 	}
 
 	.menu.open a {
@@ -71,11 +74,13 @@
 		height: 1px;
 		z-index: 9999;
 	}
+	.number_wrapper {
+		margin-right: 20px;
+	}
+
 	.phone_icon {
 		margin-right: 10px; /* Отступ справа */
 		position: relative;
-		left: -15px; /* Сдвиг влево */
-		top: 17px;
 	}
 	/* .number {
 		display: none;
@@ -98,10 +103,26 @@
 		font-size: 36px;
 	}
 
+	.work_home {
+		margin-top: -113px;
+	}
+
+	.start_header,
+	.start_header_text {
+		width: 100%;
+		padding: 10px;
+	}
+
 	.examples_job,
 	.first_column,
 	.second_column {
 		width: 100%;
+		height: auto;
+	}
+
+	.first_column,
+	.second_column {
+		align-items: flex-start;
 	}
 	.various_specialties_title,
 	.fast_growth_title,
@@ -145,7 +166,7 @@
 		width: 300px;
 	}
 	.send_summary_content {
-		width: 50%;
+		width: 100%;
 	}
 	.send_summary_title {
 		font-size: 35px;
@@ -157,8 +178,11 @@
 
 	.open_vacantion_examples {
 		display: flex;
+		align-content: center;
 		flex-direction: row;
 		gap: 15px;
+		align-items: center;
+		justify-content: center;
 	}
 	.animation_four {
 		position: relative;
@@ -181,13 +205,27 @@
 		font-size: 30px;
 		line-height: 20px;
 	}
+
+	.contact_us_footer,
 	.contact_mail {
-		align-content: center;
+		width: 100%;
+	}
+	.location {
+		display: flex;
+		flex-direction: row;
+		justify-content: end;
+	}
+	.lable_container_mail {
+		flex-direction: column;
+	}
+	.contact_mail {
+		align-content: flex-start;
+		flex-direction: row;
 	}
 	.contact_mail a {
 		font-size: 15px;
 	}
-	.map {
+	.location {
 		align-items: center;
 		width: 100%;
 	}
@@ -222,7 +260,94 @@
 		width: 100%;
 	}
 }
+@media (max-width: 800px) {
+	.header_img_container {
+		top: -100px;
+	}
+	.burger {
+		left: 10px;
+		top: 0;
+	}
+	.number {
+		margin-left: 0;
+	}
+	.phone_icon {
+		position: relative;
+		left: -15px;
+		top: 0;
+	}
+	.menu.open {
+		height: 260px;
+		background-color: black;
+		top: 80px;
+		width: 815px;
+	}
+	.start_header,
+	.start_header_text {
+		width: 100%;
+		padding: 10px;
+	}
+	.start_header_title {
+		width: 100%;
+	}
+	.animation_first {
+		top: -295px;
+		right: -60px;
+	}
+	.animation_two {
+		top: -170px;
+		left: 100px;
+	}
+	.examples_job {
+		height: 470px;
+	}
+	.examples_job > div {
+		width: 700px;
+	}
+	.container_profile {
+		height: auto;
+	}
+	.first_column {
+		height: 500px;
+		width: 690px;
+	}
+	.open_vacantion_examples {
+		flex-direction: column;
+	}
+	.java_developer_title,
+	.service_specialist_title,
+	.react_developer_title,
+	.vue_developer_title,
+	.flutter_developer_title {
+		font-size: 22px;
+	}
+	.send_summary_content,
+	.work_for_you {
+		justify-content: center;
+		align-items: center;
+	}
+	.animation_three {
+		right: 45px;
+	}
+	.close-button,
+	.close-form {
+		right: 25px;
+		top: 25px;
+	}
+	.contact_us_footer {
+		width: 100%;
+	}
+	.contact_us {
+		width: 100%;
+	}
 
+	.contact_mail {
+		width: 100%;
+	}
+	.resume-form .form-input {
+		width: 100%;
+	}
+}
 @media screen and (max-width: 768px) {
 	.menu {
 		display: none;
@@ -260,7 +385,7 @@
 		width: 100%;
 		height: auto;
 		background-color: #000000;
-		top: 70px;
+		top: 60px;
 	}
 
 	.menu.open a {
@@ -291,6 +416,7 @@
 	.number {
 		font-size: 13px;
 		margin-left: 10px;
+		display: none;
 	}
 
 	.label {
@@ -309,7 +435,7 @@
 		font-size: 40px;
 	}
 	.start_header_text {
-		width: 650px;
+		width: 100%;
 		font-size: 21px;
 	}
 	.talant_developer_title {
@@ -349,6 +475,10 @@
 		font-size: 13px;
 	}
 
+	.contact_mail {
+		width: 100%;
+	}
+
 	.contact_us_footer {
 		width: 100%;
 		height: 120px;
@@ -356,12 +486,77 @@
 		display: flex;
 		flex-direction: row;
 	}
-	.map {
+	.location {
 		width: 100%;
 	}
 }
 
 @media screen and (max-width: 620px) {
+	.lable_container_mail {
+		width: 214px;
+	}
+	.contact_mail {
+		width: 100%;
+	}
+	.examples_job {
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		margin-top: 65px;
+	}
+
+	.various_exaples,
+	.fast_growth,
+	.in_office,
+	.money,
+	.profitable_terms,
+	.offece_city,
+	.interesting_project,
+	.professional_development {
+		padding: 10px;
+		border: 2px solid #fff;
+		border-radius: 10%;
+	}
+
+	.examples_job > div {
+		display: flex;
+		width: 87%;
+		flex-direction: column;
+		align-items: center;
+		gap: 30px;
+	}
+
+	.number {
+		display: none;
+	}
+	.various_exaples_img {
+		justify-content: flex-start;
+	}
+	.various_specialties_title,
+	.various_specialties_title,
+	.fast_growth_title,
+	.profitable_terms_title,
+	.in_office_title,
+	.money_title,
+	.offece_city_title,
+	.interesting_project_title,
+	.professional_development_title {
+		font-size: 20px;
+		line-height: 20px;
+	}
+	.profitable_terms_text,
+	.various_specialties_example,
+	.fast_growth_text,
+	.in_office_text,
+	.money_text,
+	.profitable_terms_text,
+	.offece_city_text,
+	.interesting_project_text,
+	.professional_development_text {
+		font-size: 18px;
+	}
 }
 
 @media screen and (max-width: 481px) {
@@ -376,8 +571,14 @@
 		background: linear-gradient(180deg, #000000 0%, rgba(1, 29, 66, 0) 100%);
 	}
 
+	.start_header_text {
+		margin-top: 20px;
+	}
+
 	.burger {
 		display: flex;
+		left: -29px;
+		top: -10px;
 	}
 
 	.animation_first {
@@ -400,15 +601,9 @@
 	}
 
 	.phone_icon {
-		margin-right: 10px; /* Отступ справа */
-		position: relative;
-		left: -15px; /* Сдвиг влево */
-		top: 17px;
-	}
-
-	.start_header_title,
-	.start_header_text {
-		width: 480px;
+		margin-right: 10px;
+		left: 0;
+		top: -15px;
 	}
 
 	.start_header,
@@ -417,25 +612,33 @@
 		width: 100%;
 		height: auto;
 		margin-top: 65px;
+		padding: 10px;
 	}
 
 	.start_header_text {
 		height: auto;
+		width: 100%;
 		padding: 20px;
+		font-size: 24px;
+		font-weight: 700;
 	}
 
 	.start_header_button {
 		display: flex;
 		flex-direction: column;
+		margin-top: 25px;
 	}
 	.talant_developer_title {
-		font-size: 30px;
+		font-size: 36px;
+		padding: 10px;
 	}
 	.examples_job {
 		width: 100%;
+		height: auto;
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
+		margin-top: 65px;
 	}
 
 	.various_exaples,
@@ -453,8 +656,9 @@
 
 	.examples_job > div {
 		display: flex;
+		width: 87%;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 		gap: 30px;
 	}
 
@@ -484,6 +688,25 @@
 	.interesting_project_title,
 	.professional_development_title {
 		font-size: 20px;
+	}
+
+	#java_developer_button,
+	#service_specialist_button,
+	#react_developer_button,
+	#vue_developer_button,
+	#flutter_developer_button {
+		width: 250px;
+	}
+	.flutter_developer {
+	}
+
+	.close-button {
+		top: 10px;
+		right: 20px;
+	}
+
+	.animation_three {
+		bottom: -245px;
 	}
 
 	.send_summary {
@@ -536,13 +759,30 @@
 		bottom: 255px;
 	}
 
-	.map {
+	.location {
 		line-height: 20px;
-		font-size: 12px;
+		font-size: 17px;
+	}
+	.contact_us_footer {
+		height: 135px;
+	}
+
+	.lable_container_mail {
+		width: 150px;
+	}
+	.label_footer {
+		width: 100px;
+		align-items: center;
+		justify-content: center;
+	}
+	.contact_mail {
+		width: 214px;
+		align-items: flex-start;
+		align-content: start;
 	}
 	.send_summary_img {
 		width: 1500px;
-		height: 800px;
+		height: 805px;
 		top: -400px;
 	}
 }
