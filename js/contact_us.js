@@ -46,13 +46,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Добавляем обработчик события на клик по бургеру
 var burger = document.querySelector('.burger');
 var menu = document.querySelector('.menu');
 
 if (burger && menu) {
   burger.addEventListener('click', function() {
     menu.classList.toggle('open');
+  });
+
+  document.addEventListener('click', function(event) {
+    if (!menu.contains(event.target) && !burger.contains(event.target)) {
+      menu.classList.remove('open');
+    }
   });
 }
 
@@ -139,6 +144,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!name || !email || !specialty || (!resumeMessage && !newsMessage)) {
       alert('Пожалуйста, заполните все обязательные поля');
       return;
+    }
+
+    // Проверка адреса электронной почты на допустимые символы
+    var emailRegex = /^[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*@[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*\.[A-Za-z]+$/;
+    if (!emailRegex.test(email)) {
+      var emailWithoutDomainRegex = /^[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*@[A-Za-z0-9]+$/;
+      if (!emailWithoutDomainRegex.test(email)) {
+        alert('Адрес электронной почты должен содержать только английские буквы, цифры и специальные символы ".", "_", "-"');
+        return;
+      }
     }
 
     // Создание объекта FormData и добавление значений полей формы

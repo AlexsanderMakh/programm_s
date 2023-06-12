@@ -84,7 +84,6 @@ vacancyItems.forEach((item) => {
   observer.observe(item);
 });
 
-// Добавляем обработчик события на клик по бургеру
 var burger = document.querySelector('.burger');
 var menu = document.querySelector('.menu');
 
@@ -92,8 +91,13 @@ if (burger && menu) {
   burger.addEventListener('click', function() {
     menu.classList.toggle('open');
   });
-}
 
+  document.addEventListener('click', function(event) {
+    if (!menu.contains(event.target) && !burger.contains(event.target)) {
+      menu.classList.remove('open');
+    }
+  });
+}
 
 
 
@@ -106,71 +110,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var nameInput = resumeForm.querySelector('input[name="name"]');
     var phoneInput = resumeForm.querySelector('input[name="phone"]');
     var emailInput = resumeForm.querySelector('input[name="email"]');
+    var specialtySelect = resumeForm.querySelector('select[name="specialty"]');
 
     var name = nameInput ? nameInput.value : '';
     var phone = phoneInput ? phoneInput.value : '';
     var email = emailInput ? emailInput.value : '';
-
-    // Проверка обязательных полей
-    if (!name || !phone || !email ) {
-      alert('Пожалуйста, заполните все обязательные поля');
-      return;
-    }
-
-    // Проверка длины номера телефона
-    if (phone.length > 11) {
-      alert('Номер телефона не может содержать более 11 цифр');
-      return;
-    }
-
-    // Проверка адреса электронной почты на английские буквы
-    var emailRegex = /^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Адрес электронной почты должен содержать только английские буквы');
-      return;
-    }
-
-    // Создаем объект FormData и добавляем значения полей формы
-    var formData = new FormData();
-    formData.append('name', name);
-    formData.append('phone', phone);
-    formData.append('email', email);
-
-    // Отправляем данные на сервер методом POST
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://app-tech.ru/php/send.php');
-    xhr.send(formData);
-
-    // Очистка полей формы
-    if (nameInput) {
-      nameInput.value = '';
-    }
-    if (phoneInput) {
-      phoneInput.value = '';
-    }
-    if (emailInput) {
-      emailInput.value = '';
-    }
-
-    // Вывод сообщения об успешной отправке и перезагрузка страницы
-    alert('Спасибо! Ваша заявка отправлена.');
-    window.location.reload();
-  });
-
-  var myForm = document.querySelector('.my-form');
-
-  myForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    var nameInput = myForm.querySelector('input[name="name"]');
-    var phoneInput = myForm.querySelector('input[name="phone"]');
-    var emailInput = myForm.querySelector('input[name="email"]');
-    var specialtyInput = myForm.querySelector('select[name="specialty"]');
-
-    var name = nameInput ? nameInput.value : '';
-    var phone = phoneInput ? phoneInput.value : '';
-    var email = emailInput ? emailInput.value : '';
-    var specialty = specialtyInput ? specialtyInput.value : '';
+    var specialty = specialtySelect ? specialtySelect.value : '';
 
     // Проверка обязательных полей
     if (!name || !phone || !email || !specialty) {
@@ -179,16 +124,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Проверка длины номера телефона
-    if (phone.length > 11) {
-      alert('Номер телефона не может содержать более 11 цифр');
+    if (phone.length > 20) {
+      alert('Слишком длинный номер телефона');
       return;
     }
 
-    // Проверка адреса электронной почты на английские буквы
-    var emailRegex = /^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Адрес электронной почты должен содержать только английские буквы');
+    // Проверка номера телефона на использование только цифр
+    var phoneRegex = /^\+?\d+$/;
+    if (!phoneRegex.test(phone)) {
+      alert('Номер телефона должен содержать только цифры и символ "+" в начале (если нужно)');
       return;
+    }
+
+    // Проверка адреса электронной почты
+    var emailRegex = /^[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*@[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*\.[A-Za-z]+$/;
+    if (!emailRegex.test(email)) {
+      var emailWithoutDomainRegex = /^[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*@[A-Za-z0-9]+$/;
+      if (!emailWithoutDomainRegex.test(email)) {
+        alert('Адрес электронной почты должен содержать только английские буквы, цифры и специальные символы ".", "_", "-"');
+        return;
+      }
     }
 
     // Создаем объект FormData и добавляем значения полей формы
@@ -213,8 +168,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (emailInput) {
       emailInput.value = '';
     }
-    if (specialtyInput) {
-      specialtyInput.value = '';
+    if (specialtySelect) {
+      specialtySelect.selectedIndex = 0;
     }
 
     // Вывод сообщения об успешной отправке и перезагрузка страницы
@@ -222,3 +177,114 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.reload();
   });
 });
+
+var myForm = document.querySelector('.my-form');
+
+myForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var nameInput = myForm.querySelector('input[name="name"]');
+  var phoneInput = myForm.querySelector('input[name="phone"]');
+  var emailInput = myForm.querySelector('input[name="email"]');
+  var specialtyInput = myForm.querySelector('select[name="specialty"]');
+
+  var name = nameInput ? nameInput.value : '';
+  var phone = phoneInput ? phoneInput.value : '';
+  var email = emailInput ? emailInput.value : '';
+  var specialty = specialtyInput ? specialtyInput.value : '';
+
+  // Проверка обязательных полей
+  if (!name || !phone || !email || !specialty) {
+    alert('Пожалуйста, заполните все обязательные поля');
+    return;
+  }
+
+  // Проверка длины номера телефона
+  if (phone.length > 20) {
+    alert('Слишком длинный номер телефона');
+    return;
+  }
+
+  // Проверка номера телефона на использование только цифр
+  var phoneRegex = /^\+?\d+$/;
+  if (!phoneRegex.test(phone)) {
+    alert('Номер телефона должен содержать только цифры и символ "+" в начале (если нужно)');
+    return;
+  }
+
+  // Проверка адреса электронной почты
+  var emailRegex = /^[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*@[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*\.[A-Za-z]+$/;
+  if (!emailRegex.test(email)) {
+    var emailWithoutDomainRegex = /^[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*@[A-Za-z0-9]+$/;
+    if (!emailWithoutDomainRegex.test(email)) {
+      alert('Адрес электронной почты должен содержать только английские буквы, цифры и специальные символы ".", "_", "-"');
+      return;
+    }
+  }
+
+  // Создаем объект FormData и добавляем значения полей формы
+  var formData = new FormData();
+  formData.append('name', name);
+  formData.append('phone', phone);
+  formData.append('email', email);
+  formData.append('specialty', specialty);
+
+  // Отправляем данные на сервер методом POST
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'http://app-tech.ru/php/send.php');
+  xhr.send(formData);
+
+  // Очистка полей формы
+  if (nameInput) {
+    nameInput.value = '';
+  }
+  if (phoneInput) {
+    phoneInput.value = '';
+  }
+  if (emailInput) {
+    emailInput.value = '';
+  }
+  if (specialtyInput) {
+    specialtyInput.value = '';
+  }
+
+  // Вывод сообщения об успешной отправке и перезагрузка страницы
+  alert('Спасибо! Ваша заявка отправлена.');
+  window.location.reload();
+});
+
+// Попап-форма для проекта
+const closeFormButton = document.querySelector('.close-form');
+const popupFormContainerProject = document.querySelector('.popup-form-container-project');
+const popupFormProject = document.querySelector('.popup-form-project');
+
+if (closeFormButton && popupFormContainerProject && popupFormProject) {
+  closeFormButton.addEventListener('click', () => {
+    closePopupFormProject();
+  });
+
+  popupFormContainerProject.addEventListener('click', (event) => {
+    if (event.target === popupFormContainerProject) {
+      closePopupFormProject();
+    }
+  });
+
+  function closePopupFormProject() {
+    popupFormContainerProject.style.display = 'none';
+    popupFormProject.classList.remove('show');
+  }
+}
+
+const projectButton = document.getElementById('projectBtn');
+
+if (projectButton) {
+  projectButton.addEventListener('click', () => {
+    // Закрыть предыдущую попап-форму, если она открыта
+    closePopupFormProject();
+
+    popupFormContainerProject.style.display = 'flex';
+    setTimeout(() => {
+      popupFormProject.classList.add('show');
+    }, 100);
+  });
+}

@@ -43,6 +43,7 @@ function handleIntersection(entries, observer) {
       document.getElementById("android").classList.add('androidshow');
       document.getElementById("ios").classList.add('iosshow');
       document.getElementById("admin").classList.add('adminshow');
+      document.getElementById("tester").classList.add('testershow');
     }
   });
 }
@@ -60,18 +61,11 @@ symbolPositions.forEach(symbolPosition => {
   observer.observe(symbolPosition);
 });
 
-// Переход по клику на кнопку
-// var teamButton = document.getElementById('goTeam');
-// if (teamButton) {
-//   teamButton.addEventListener("click", function() {
-//     window.location.href = "vacancies.html#openVacantion";
-//   });
-// }
 
 var teamButton = document.getElementById('teamBtn');
 if (teamButton) {
   teamButton.addEventListener("click", function() {
-    window.location.href = "vacancies.html";
+    window.location.href = "vacancies.html#send_summary";
   });
 }
 
@@ -84,6 +78,21 @@ function smoothScroll(target) {
   });
 }
 
+// Добавляем обработчик события на клик по бургеру
+var burger = document.querySelector('.burger');
+var menu = document.querySelector('.menu');
+
+if (burger && menu) {
+  burger.addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+
+  document.addEventListener('click', function(event) {
+    if (!menu.contains(event.target) && !burger.contains(event.target)) {
+      menu.classList.remove('open');
+    }
+  });
+}
 // Попап-форма
 const closeButton = document.querySelector('.close-button');
 const popupFormContainer = document.querySelector('.popup-form-container');
@@ -107,7 +116,6 @@ if (closeButton && popupFormContainer && popupForm) {
 }
 
 const buttonIds = [
-  'projectBtn',
   'goTeam',
 ];
 
@@ -116,26 +124,21 @@ buttonIds.forEach(buttonId => {
 
   if (button) {
     button.addEventListener('click', () => {
+      // Закрыть предыдущую открытую форму, если есть
+      closePopupForm();
+
+      // Открыть текущую форму
       popupFormContainer.style.display = 'flex';
       popupForm.classList.add('show');
     });
   }
 });
 
-// Добавляем обработчик события на клик по бургеру
-var burger = document.querySelector('.burger');
-var menu = document.querySelector('.menu');
-
-if (burger && menu) {
-  burger.addEventListener('click', function() {
-    menu.classList.toggle('open');
-  });
-}
-
 var form = document.getElementById('resumeForm');
 var nameInput = document.querySelector('#resumeForm input[name="name"]');
 var phoneInput = document.querySelector('#resumeForm input[name="phone"]');
 var emailInput = document.querySelector('#resumeForm input[name="email"]');
+var specialtyInput = document.querySelector('#resumeForm select[name="specialty"]');
 var myForm = document.getElementById('myForm');
 
 form.addEventListener('submit', function(event) {
@@ -144,24 +147,35 @@ form.addEventListener('submit', function(event) {
   var name = nameInput.value;
   var phone = phoneInput.value;
   var email = emailInput.value;
+  var specialty = specialtyInput.value;
 
   // Проверка обязательных полей
-  if (!name || !phone || !email) {
+  if (!name || !phone || !email || !specialty) {
     alert('Пожалуйста, заполните все обязательные поля');
     return;
   }
 
   // Проверка длины номера телефона
-  if (phone.length > 11) {
-    alert('Номер телефона не может содержать более 11 цифр');
+  if (phone.length > 20) {
+    alert('Слишком длинный номер телефона');
     return;
   }
 
-  // Проверка адреса электронной почты на английские буквы
-  var emailRegex = /^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]+$/;
-  if (!emailRegex.test(email)) {
-    alert('Адрес электронной почты должен содержать только английские буквы');
+  // Проверка номера телефона на использование только цифр и символа "+"
+  var phoneRegex = /^\+?\d+$/;
+  if (!phoneRegex.test(phone)) {
+    alert('Номер телефона должен содержать только цифры и символ "+" в начале (если нужно)');
     return;
+  }
+
+  // Проверка адреса электронной почты на допустимые символы
+  var emailRegex = /^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]+$/;
+  if (!emailRegex.test(email)) {
+    var emailWithoutDomainRegex = /^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+$/;
+    if (!emailWithoutDomainRegex.test(email)) {
+      alert('Адрес электронной почты должен содержать только английские буквы, цифры и специальные символы ".", "_", "-"');
+      return;
+    }
   }
 
   // Создаем объект FormData и добавляем значения полей формы
@@ -169,6 +183,7 @@ form.addEventListener('submit', function(event) {
   formData.append('name', name);
   formData.append('phone', phone);
   formData.append('email', email);
+  formData.append('specialty', specialty);
 
   // Создаем новый объект XMLHttpRequest
   var xhr = new XMLHttpRequest();
@@ -192,4 +207,110 @@ form.addEventListener('submit', function(event) {
   // Открываем соединение и отправляем данные на сервер методом POST
   xhr.open('POST', 'http://app-tech.ru/php/send.php');
   xhr.send(formData);
+});
+
+// Попап-форма для проекта
+const closeFormButton = document.querySelector('.close-form');
+const popupFormContainerProject = document.querySelector('.popup-form-container-project');
+const popupFormProject = document.querySelector('.popup-form-project');
+
+if (closeFormButton && popupFormContainerProject && popupFormProject) {
+  closeFormButton.addEventListener('click', () => {
+    closePopupFormProject();
+  });
+
+  popupFormContainerProject.addEventListener('click', (event) => {
+    if (event.target === popupFormContainerProject) {
+      closePopupFormProject();
+    }
+  });
+
+  function closePopupFormProject() {
+    popupFormContainerProject.style.display = 'none';
+    popupFormProject.classList.remove('show');
+  }
+}
+
+const projectButton = document.getElementById('projectBtn');
+
+if (projectButton) {
+  projectButton.addEventListener('click', () => {
+    // Закрыть предыдущую открытую форму, если есть
+    closePopupFormProject();
+
+    // Открыть форму для проекта
+    popupFormContainerProject.style.display = 'flex';
+    popupFormProject.classList.add('show');
+  });
+}
+
+var formProject = document.querySelector('#myFormProject form');
+var nameInputProject = document.querySelector('#myFormProject input[name="name"]');
+var phoneInputProject = document.querySelector('#myFormProject input[name="phone"]');
+var emailInputProject = document.querySelector('#myFormProject input[name="email"]');
+
+formProject.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var nameProject = nameInputProject.value;
+  var phoneProject = phoneInputProject.value;
+  var emailProject = emailInputProject.value;
+
+  // Проверка обязательных полей
+  if (!nameProject || !phoneProject || !emailProject) {
+    alert('Пожалуйста, заполните все обязательные поля');
+    return;
+  }
+
+  // Проверка длины номера телефона
+  if (phoneProject.length > 20) {
+    alert('Слишком длинный номер телефона');
+    return;
+  }
+
+  // Проверка номера телефона на использование только цифр и символа "+"
+  var phoneRegex = /^\+?\d+$/;
+  if (!phoneRegex.test(phoneProject)) {
+    alert('Номер телефона должен содержать только цифры и символ "+" в начале (если нужно)');
+    return;
+  }
+
+  // Проверка адреса электронной почты на допустимые символы
+  var emailRegex = /^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]+$/;
+  if (!emailRegex.test(emailProject)) {
+    var emailWithoutDomainRegex = /^[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*@[A-Za-z0-9]+$/;
+    if (!emailWithoutDomainRegex.test(emailProject)) {
+      alert('Адрес электронной почты должен содержать только английские буквы, цифры и специальные символы ".", "_", "-"');
+      return;
+    }
+  }
+
+  // Создаем объект FormData и добавляем значения полей формы
+  var formDataProject = new FormData();
+  formDataProject.append('name', nameProject);
+  formDataProject.append('phone', phoneProject);
+  formDataProject.append('email', emailProject);
+
+  // Создаем новый объект XMLHttpRequest
+  var xhrProject = new XMLHttpRequest();
+
+  // Устанавливаем обработчик события onload для получения ответа от сервера
+  xhrProject.onload = function() {
+    if (xhrProject.status === 200) {
+      // Успешная отправка данных
+      console.log('Данные успешно отправлены');
+      formProject.reset(); // Очистка полей формы
+      var confirmation = confirm('Спасибо! Ваша заявка успешно отправлена. Нажмите "OK", чтобы перезагрузить страницу.');
+      if (confirmation) {
+        window.location.reload(); // Перезагрузка страницы
+      }
+    } else {
+      // Ошибка при отправке данных
+      console.log('Ошибка при отправке данных');
+    }
+  };
+
+  // Открываем соединение и отправляем данные на сервер методом POST
+  xhrProject.open('POST', 'http://app-tech.ru/php/send.php');
+  xhrProject.send(formDataProject);
 });
