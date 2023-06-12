@@ -27,6 +27,7 @@
 				<div class="burger">
 					<div class="burger-line"></div>
 					<div class="burger-line"></div>
+					<div class="burger-line"></div>
 				</div>
 				<div class="menu">
 					<a href="vacancies.html" class="navMenu__item">ВАКАНСИИ</a>
@@ -38,13 +39,13 @@
 				</div>
 			</div>
 			<div class="number_wrapper">
-				<a class="number_icon" href="tel:+8800000000"><svg class="phone_icon" width="20" height="20"
+				<a class="number_icon" href="tel:++375255406261"><svg class="phone_icon" width="20" height="20"
 						viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M4.06833 7.89083C5.38833 10.485 7.515 12.6025 10.1092 13.9317L12.1258 11.915C12.3733 11.6675 12.74 11.585 13.0608 11.695C14.0875 12.0342 15.1967 12.2175 16.3333 12.2175C16.8375 12.2175 17.25 12.63 17.25 13.1342V16.3333C17.25 16.8375 16.8375 17.25 16.3333 17.25C7.72583 17.25 0.75 10.2742 0.75 1.66667C0.75 1.1625 1.1625 0.75 1.66667 0.75H4.875C5.37917 0.75 5.79167 1.1625 5.79167 1.66667C5.79167 2.8125 5.975 3.9125 6.31417 4.93917C6.415 5.26 6.34167 5.6175 6.085 5.87417L4.06833 7.89083Z"
 							fill="white"></path>
 					</svg></a>
-				<a class="number" href="tel:+3752255406261">3 (752) 255-40-6261</a>
+				<a class="number" href="tel:+375255406261">+375255406261</a>
 			</div>
 
 		</div>
@@ -71,9 +72,9 @@
 
 			</div>
 
-			<div class="program_name_text">Разрабатываем приложения, игры и программы <strong>для всех операционных
-					систем.<br>Под ключ:</strong>
-				От технического задания до запуска проекта</div>
+			<div class="program_name_text">Разрабатываем приложения, игры и программы<strong> для всех операционных систем
+					«под ключ»:<br></strong> от технического задания до запуска
+				проекта </div>
 			<div class="btn">
 
 				<button class="project_btn" id="projectBtn">ОБСУДИТЬ ПРОЕКТ</button>
@@ -94,7 +95,8 @@
 			<img class="img_header" id="img_header" src="/img/nasa-Q1p7bh3SHj8-unsplash 1.png" alt="nasa">
 		</div>
 		<div class="description_text" id="description_text">
-			<p><strong> JetFors — многопрофильная команда профессионалов</strong> по разработке программного обеспечения:
+			<p class="description_text_profile"><strong> JetFORS — многопрофильная команда профессионалов</strong> по
+				разработке программного обеспечения:
 				архитекторы ПО,
 				программисты,
 				тестировщики, системные администраторы и техподдержка</p>
@@ -226,7 +228,7 @@
 							договор о неразглашении.
 						</p>
 					</div>
-					<hr class="line">
+					<hr class="line_last">
 				</div>
 
 
@@ -236,13 +238,44 @@
 	<div class="popup-form-container">
 		<div class="popup-form" id="myForm">
 			<button class="close-button">✕</button>
-			<h2 class="form-title">Подайте резюме</h2>
+			<h2 class="form-title">Подайте заявку</h2>
 			<h3 class="form-subtitle">Мы свяжемся с вами и расскажем подробнее о вакансии</h3>
 			<form class="resume-form" id="resumeForm">
 				<input class="form-input" type="text" name="name" placeholder="Введите имя" />
 				<input class="form-input" type="tel" name="phone" placeholder="Введите телефон" />
 				<input class="form-input" type="email" name="email" placeholder="Введиите Email">
+				<select class="form-input specialty-select" name="specialty" placeholder="Выберите специальность">
+					<option disabled selected>Выберите специальность</option>
+					<option>Java-разработчик</option>
+					<option>Аналитик</option>
+					<option>Верстальщик</option>
+					<option>Архитектор проекта</option>
+					<option>Дизайнер</option>
+					<option>Тестировщик</option>
+					<option>Разработчик БД</option>
+					<option>Android-разработчик</option>
+					<option>iOS-разработчик</option>
+					<option>Системный администратор</option>
+					<option>Руководитель проекта</option>
+					<option>Специалист службы поддержки и сопровождения</option>
+					<option>Разработчик React + TypeScript</option>
+					<option>Разработчик Vue.js</option>
+					<option>Разработчик Flutter</option>
+				</select>
 				<button class="submit-button" type="submit">Узнать подробнее</button>
+			</form>
+		</div>
+	</div>
+	<div class="popup-form-container-project">
+		<div class="popup-form-project" id="myFormProject">
+			<button class="close-form">✕</button>
+			<h2 class="form-title">Обсудить проект</h2>
+			<h3 class="form-subtitle">Мы свяжемся с Вами</h3>
+			<form class="resume-form" id="resumeForm">
+				<input class="form-input" type="text" name="name" placeholder="Введите имя" />
+				<input class="form-input" type="tel" name="phone" placeholder="Введите телефон" />
+				<input class="form-input" type="email" name="email" placeholder="Введиите Email">
+				<button class="submit-button-project" type="submit">Отправить</button>
 			</form>
 		</div>
 	</div>
@@ -267,6 +300,7 @@
 				<div class="developer_javascript" id="developer_javascript">Разработчик JavaScript</div>
 				<div class="project_manager" id="project_manager">Руководитель проекта</div>
 				<div class="designer" id="designer">Дизайнер</div>
+				<div class="tester" id="tester">Тестировщик</div>
 				<div class="developer" id="developer">Разработчик БД</div>
 				<div class="android" id="android">Android-разработчик</div>
 				<div class="ios" id="ios">iOS-разработчик</div>
@@ -299,24 +333,28 @@
 		<hr class="line">
 		<div class="contact_us">
 			<div class="contact_us_footer">
-				<div class="label_footer">
-					<span class="jet">jet</span>
-					<h2 class="fors">fors</h2>
-				</div>
+				<div class="lable_container_mail">
+					<div class="label_footer">
+						<a href="index.html">
+							<span class="jet">jet</span>
+							<h2 class="fors">fors</h2>
+						</a>
+					</div>
 
-				<div class="contact_mail">
-					<a class="contact_mail_send" href="mailto:postmaster@jet-fors.ru">postmaster@jet-fors.ru</a>
-					<a class="contact_mail_phone" href="tel:+375255406261">3 (752) 255-40-6261</a>
+					<div class="contact_mail">
+						<a class="contact_mail_send" href="mailto:postmaster@jet-fors.ru">postmaster@jet-fors.ru</a>
+						<a class="contact_mail_phone" href="tel:+375255406261">+375255406261</a>
+					</div>
 				</div>
-				<div class="map">
-					г. Минск, 3-й Загородный переулок, 4В, оф 411<br>
-					г. Гродно ул Буденного 48А оф 77
+				<div class="location">
+					г. Минск, 3-й Загородный переулок, 4В, офис 411<br>
+					г. Гродно, ул. Буденного 48А, офис 77
 				</div>
 			</div>
 		</div>
 		</div>
 	</footer>
-	<script src="/js/index.js"></script>
+	<script src="js/index.js"></script>
 </body>
 
 </html>
